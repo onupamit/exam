@@ -1,29 +1,85 @@
 What jdk contains or composed of and define each components?
+ Ans: jdk contains Java Compiler,Java Interpreter,Java Disassembler,Java Header File Generator,Java Documentation,Java Debugger,Java Applet Viewer 
 What is IDE?
+ Ans:  integrated development environment.
 What are the IDEs available in the market to support java?
+ Ans: Eclipse, NetBeans , IntelliJ
 Explain the entire java life cycle.
+ Ans: start with Editor(ex: Eclipse) ->Source code( Source.java)->Java Compiler(javac)->Bytecodes(ClassName.class)->JVM (Java Virtual Machine)->Operating System
 what is class?
-What is object?
+ Ans: A class is the blueprint from which individual objects are created. A java source file compile to bytecode and become classfile which use to create an object.
+What is object? 
+ Ans: Object is the working copy of a class. An object is a software bundle of variables and related methods.
 What is the entry point of an application?
+ Ans: main() is the entry point.
 Why main is static?
+ Ans: It can be called from anywhere .
 What is the difference between an Interface and Abstract class?
-Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+ Ans: An Interface  does not have any method body but Abstract could have method body and some of the variables is declared.
+     Interface implements on a class but  abstract need to be extends in a class. 
+Can you make an Object from an Interface and Abstract class ? if not how do you use it ? 
+   Ans: No, Interface need to be  implements in a class and complete its method body.
+         Abstract class need to be  extends in a class and complete its method body before making an object.
 what is Access Specifier?
+    Ans: public, private and  protected
 What is OOP ? Define each feature of java OOP.
+    Ans: OOP stands for  Object-oriented programming .It is a programming paradigm based on the concept of "objects" which are data structures that contain data and methods.
+
 What is API? Name list of API that you have used so far.
+  Ans: API stands for Application Programming Interfaces.  I have used so far Google Maps Android API V1,java Swing API ,Java Utility API etc
 Does java support multiple inheritance?
+  Ans : No.
 What is method overloading and when it happens?
+  Ans: Method overloading means  more than one  methods have same name in a class but signature is differents.
+   Signature means method arguments. It happen in compile time.
+
 What is method overriding and when it happens?
+  Ans: A class and its super class has the same name of a method. Method in the subclass is more specific then the super class. it happens in the run time. 
 Explain exceptions in java and how to handle it.
+  Ans: An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
+      Java handle it with its throw exception between  try and catch block. 
 What is static keyword in java? How it has been used in variables and methods ?
+  Ans: A static keyword is  a single instance for the whole class that defines it, even if there is no instance of this class in the program.
+    A member variable, or method which declared with Static can be accessed without requiring an instantiation of the class to which it belongs.
 What is final and how it has been used variables and methods?
+   Ans: Final means final , it will not be changed. The final keyword is used variables and methods  which may only be assigned once.
+        Once a final variable has been assigned, it always contains the same value. If a final variable holds a reference to an object,
+         then the state of the object may be changed by operations on the object, but the variable will always refer to the same objec
 What is final, finally and finalize?
+   Ans: final: final is a keyword. The variable decleared as final should be initialized only once and cannot be changed.
+        finally: finally is a block. The finally block always executes when the try block exits. This ensures that the finally block is
+                  executed even if an unexpected exception occurs.
+        finalize: finalize is a method. Before an object is garbage collected, the runtime system calls its finalize() method.
+                  You can write system resources release code in finalize() method before getting garbage 
 What is a constructor ?
+  Ans: Constructor is a special type of method that is used to initialize the object. Constructor is invoked at the time of object creation.
+           It constructs the values i.e. provides data for the object that is why it is known as constructor.
 What is "this" keyword in java ?
+    Ans: this is a reference variable that refers to the current class instance variable.
 What is "super" keyword in java?
+   Ans: "super" keyword is used to call the Constructor of a super class.
 What is JVM stand for ?
+   Ans : Java Virtual Machine.
 What version of java are you using?
+  Ans: java version "1.8.0_40"
 What is JAR stand for ?
+  Ans: Java Archive
 What is compile time and run time?
+  Ans: compile time means when a java source code compile to become bytecode.
+      A compiled program can be opened and run by a user. When anapplication is running, it is called runtime.
+    
 What is heap?
+   Ans: The JVM has a heap that is the runtime data area from which memory for all class instances and arrays are allocated.
+      It is created at the JVM start-up.
 How java manage it's memory?
+   Ans: Ans. In java, memory is managed via garbage collector. Few techniques for memory management are:
+       1. Reference Counting: A count of references to each object is maintained. When garbage collector runs, it deletes objects with zero reference count. 
+      Drawback: Circular references are maintained in memory.
+
+      2. Tracing collectors/Copy Collector/Stop and copy collector: Start from a root object and keep a track of all references which have direct/indirect reference to the root object. Then all the live objects are moved to another heap, taking care of references properly.
+       Drawback: At each point of time, you will have 2 heaps thus consuming twice the memory.
+
+      3. Mark sweep collectors/Stop and work collector: Similar to tracing collector except that instead of copying the references to the new heap, they are swept out of memory, after a list of live and dead objects is known.
+
+      Mark and sweep is a stop-the-world garbage collection technique; that is all application threads stop until garbage collection completes or until a higher-priority thread interrupts the garbage collector. If the garbage collector is interrupted it must restart which can lead to application thrashing with little apparent result.
+   
